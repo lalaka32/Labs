@@ -41,13 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Paper.cs" />
+    <Compile Include="Article.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ResearchTeam.cs" />
+    <Compile Include="Magazine.cs" />
     <Compile Include="TestMassOnTime.cs" />
-    <Compile Include="TimeFrame.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

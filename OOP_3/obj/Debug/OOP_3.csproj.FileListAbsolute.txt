@@ -17,3 +17,10 @@ E:\OOP_3\obj\Debug\OOP_3.pdb
 E:\OOP_3\obj\Debug\OOP_3.csprojResolveAssemblyReference.cache
 E:\OOP_3\bin\Debug\OOP_3.exe
 E:\OOP_3\bin\Debug\OOP_3.pdb
+E:\GitHub\Labs\OOP_3\bin\Debug\OOP_3.exe.config
+E:\GitHub\Labs\OOP_3\bin\Debug\OOP_3.exe
+E:\GitHub\Labs\OOP_3\bin\Debug\OOP_3.pdb
+E:\GitHub\Labs\OOP_3\obj\Debug\OOP_3.csprojResolveAssemblyReference.cache
+E:\GitHub\Labs\OOP_3\obj\Debug\OOP_3.csproj.CoreCompileInputs.cache
+E:\GitHub\Labs\OOP_3\obj\Debug\OOP_3.exe
+E:\GitHub\Labs\OOP_3\obj\Debug\OOP_3.pdb
