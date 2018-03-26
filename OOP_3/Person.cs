@@ -10,31 +10,39 @@ namespace OOP_3
     class Person
     {
        
-        private DateTime dateOfBorn;
-        public string Name { get; set; }
-        public string Surname { get; set; }
+        DateTime dateOfBorn;
+        string name, surname;
 
         public DateTime DateOfBorn
         {
             get { return dateOfBorn; }
             set { dateOfBorn = value; }
         }
-        public int DateOfBornInt
+        public int YearOfBornInt
         {
             get { return dateOfBorn.Year; }
-            set {dateOfBorn= new DateTime( value,dateOfBorn.Month,dateOfBorn.Day); }
+            set {dateOfBorn = new DateTime(value, dateOfBorn.Month, dateOfBorn.Day); }
         }
-        
+        public string Name
+        {
+            get { return name; }
+            set { name = value; }
+        }
+        public string Surname
+        {
+            get { return surname; }
+            set { surname = value; }
+        }
         public Person(string name, string surname, DateTime dateOfBorn)
         {
-            this.Name = name;
-            this.Surname = surname;
+            this.name = name;
+            this.surname = surname;
             this.dateOfBorn = dateOfBorn;
         }
         public Person()
         {
-            Name = "";
-            Surname = "";
+            name = "";
+            surname = "";
             dateOfBorn = new DateTime();
         }
         public override string ToString()

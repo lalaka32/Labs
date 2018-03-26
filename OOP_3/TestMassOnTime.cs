@@ -8,71 +8,98 @@ namespace OOP_3
 {
     class TestMassOnTime
     {
-        static public void Test()
+        
+        static public void Test(Article article)
         {
             int nrow = 0, ncolumn = 0;
-
             string text = Console.ReadLine();
             string[] words = text.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
             nrow = Convert.ToInt32(words[0]);
             ncolumn = Convert.ToInt32(words[1]);
-
-            int[] mas1 = InitOneDimensional(nrow, ncolumn);
-            int[,] mas2 = InitTwoDimensional(nrow, ncolumn);
-            int[][] mas3 = InitJagged(nrow, ncolumn);
+            Person okabeRentaro = new Person("HOOOUIN ", "KYOOOOMAA", new DateTime(1996, 1, 1));
+            Article[] mas1 = InitOneDimen(nrow, ncolumn, article);
+            Article [,] mas2 = InitTwoDimens(nrow, ncolumn, article);
+            Article [][] mas3 = InitJagged(nrow, ncolumn, article);
+            TestTime(mas1, okabeRentaro);
+            TestTime(mas2, okabeRentaro);
+            TestTime(mas3, okabeRentaro);
 
         }
 
-        static int[] InitOneDimensional(int nrow, int ncolumn)
+        static Article[] InitOneDimen(int vert, int horiz, Article article)//одномерный
         {
-            int timer = Environment.TickCount;
-            int[] mas1 = new int[nrow * ncolumn];
-            Random rnd = new Random();
-            for (int i = 0; i < mas1.Length; i++)
+            Article[] mas = new Article[vert * horiz];
+            for (int i = 0; i < mas.Length; i++)
             {
-                mas1[i] = rnd.Next(0, 10);
+                mas[i] = article;
             }
-            timer = Environment.TickCount - timer;
-            Console.WriteLine("for One mls : " + timer);
-            return mas1;
+            return mas;
         }
 
-        static int[,] InitTwoDimensional(int nrow, int ncolumn)
+        static Article[,] InitTwoDimens(int vert, int horiz, Article article)//двумерный
         {
-            int timer = Environment.TickCount;
-            int[,] mas1 = new int[nrow, ncolumn];
-            Random rnd = new Random();
-            for (int i = 0; i < nrow; i++)
+            Article[,] mas = new Article[vert, horiz];
+            for (int i = 0; i < vert; i++)
             {
-                for (int j = 0; j < ncolumn; j++)
+                for (int j = 0; j < horiz; j++)
                 {
-                    mas1[i, j] = rnd.Next(0, 10);
+                    mas[i, j] = article;
                 }
             }
-            timer = Environment.TickCount - timer;
-            Console.WriteLine("for two mls : " + timer);
-            return mas1;
+            return mas;
         }
-        static int[][] InitJagged(int nrow, int ncolumn)
+        static Article[][] InitJagged(int nrow, int ncolumn, Article article)//ступенчатый
         {
-            int timer = Environment.TickCount;
-            int[][] mas1 = new int[nrow][];
-            Random rnd = new Random();
+            Article[][] mas = new Article[nrow][];
             for (int i = 0; i < nrow; i++)
             {
-                mas1[i] = new int[ncolumn];
-
+                mas[i] = new Article[ncolumn];
             }
             for (int i = 0; i < nrow; i++)
             {
                 for (int j = 0; j < ncolumn; j++)
                 {
-                    mas1[i][j] = rnd.Next(0, 10);
+                    mas[i][j] = article;
+                }
+            }
+
+            return mas;
+        }
+        static void TestTime(Article[][] mas, Person pers)
+        {
+            int timer = Environment.TickCount;
+            for (int i = 0; i < mas.GetLength(0); i++)
+            {
+                for (int j = 0; j < mas[i].GetLength(0); j++)
+                {
+                    mas[i][j].Autor = pers;
                 }
             }
             timer = Environment.TickCount - timer;
-            Console.WriteLine("for Jagged mls : " + timer);
-            return mas1;
+            Console.WriteLine("Для ступечатого массива млс : " + timer);
+        }
+        static void TestTime(Article[] mas, Person pers)
+        {
+            int timer = Environment.TickCount;
+            for (int i = 0; i < mas.Count(); i++)
+            {
+                mas[i].Autor = pers;
+            }
+            timer = Environment.TickCount - timer;
+            Console.WriteLine("Для одномерного массива млс : " + timer);
+        }
+        static void TestTime(Article[,] mas, Person pers)
+        {
+            int timer = Environment.TickCount;
+            for (int i = 0; i < mas.GetLength(0); i++)
+            {
+                for (int j = 0; j < mas.GetLength(1); j++)
+                {
+                    mas[i,j].Autor = pers;
+                }
+            }
+            timer = Environment.TickCount - timer;
+            Console.WriteLine("Для двумерного массива млс : " + timer);
         }
     }
 }
