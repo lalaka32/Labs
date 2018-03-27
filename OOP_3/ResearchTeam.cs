@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace OOP_3
 {
@@ -16,8 +13,8 @@ namespace OOP_3
 
         public string Subject
         {
-            get { return Subject; }
-            set { Subject = value; }
+            get { return subject; }
+            set { subject = value; }
         }
 
         public string Organization
@@ -45,9 +42,17 @@ namespace OOP_3
         public Paper LastPaper
         {
             get {
-                if (papers.Last()!=null)
+                if (papers[0]!=null)
                 {
-                    return papers.Last();
+                    Paper minPaper = Papers[0];
+                    foreach (var item in papers)
+                    {
+                        if (item.Date> minPaper.Date)
+                        {
+                            minPaper = item;
+                        }
+                    }
+                    return minPaper;
                 }
                 else
                 {
@@ -69,6 +74,38 @@ namespace OOP_3
             number = 0;
             lengthOfResearch = new TimeFrame();
         }
-
+        public bool this [TimeFrame time]
+        {
+            get
+            {
+                if (lengthOfResearch== time)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }
+        public void AddPapers (params Paper[] paper)
+        {
+            List<Paper> listofarticles = papers.ToList();
+            listofarticles.AddRange(paper);
+            papers = listofarticles.ToArray();
+        }
+        public override string ToString()
+        {
+            string listPaper="";
+            foreach (Paper item in papers)
+            {
+                listPaper += item.NameOfPublication + " ";
+            }
+            return subject+" "+organization+" "+number+" "+lengthOfResearch+" "+listPaper;
+        }
+        public virtual string ToShortString()
+        {
+            return subject + " " + organization + " " + number + " " + lengthOfResearch;
+        }
     }
 }
