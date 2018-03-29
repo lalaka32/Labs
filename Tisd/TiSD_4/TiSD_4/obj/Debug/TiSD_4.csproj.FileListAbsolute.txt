@@ -1,0 +1,7 @@
+c:\users\антон\documents\visual studio 2017\Projects\TiSD_4\TiSD_4\bin\Debug\TiSD_4.exe.config
+c:\users\антон\documents\visual studio 2017\Projects\TiSD_4\TiSD_4\bin\Debug\TiSD_4.exe
+c:\users\антон\documents\visual studio 2017\Projects\TiSD_4\TiSD_4\bin\Debug\TiSD_4.pdb
+c:\users\антон\documents\visual studio 2017\Projects\TiSD_4\TiSD_4\obj\Debug\TiSD_4.csprojResolveAssemblyReference.cache
+c:\users\антон\documents\visual studio 2017\Projects\TiSD_4\TiSD_4\obj\Debug\TiSD_4.csproj.CoreCompileInputs.cache
+c:\users\антон\documents\visual studio 2017\Projects\TiSD_4\TiSD_4\obj\Debug\TiSD_4.exe
+c:\users\антон\documents\visual studio 2017\Projects\TiSD_4\TiSD_4\obj\Debug\TiSD_4.pdb
