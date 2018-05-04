@@ -1,0 +1,7 @@
+C:\Users\антон\Documents\Visual Studio 2017\Projects\tisd5\tisd5\bin\Debug\tisd5.exe.config
+C:\Users\антон\Documents\Visual Studio 2017\Projects\tisd5\tisd5\bin\Debug\tisd5.exe
+C:\Users\антон\Documents\Visual Studio 2017\Projects\tisd5\tisd5\bin\Debug\tisd5.pdb
+C:\Users\антон\Documents\Visual Studio 2017\Projects\tisd5\tisd5\obj\Debug\tisd5.csprojResolveAssemblyReference.cache
+C:\Users\антон\Documents\Visual Studio 2017\Projects\tisd5\tisd5\obj\Debug\tisd5.csproj.CoreCompileInputs.cache
+C:\Users\антон\Documents\Visual Studio 2017\Projects\tisd5\tisd5\obj\Debug\tisd5.exe
+C:\Users\антон\Documents\Visual Studio 2017\Projects\tisd5\tisd5\obj\Debug\tisd5.pdb
