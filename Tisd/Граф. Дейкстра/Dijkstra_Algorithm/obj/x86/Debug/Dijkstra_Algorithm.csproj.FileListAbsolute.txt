@@ -1,0 +1,22 @@
+F:\Dij 2010\Dijkstra_Algorithm\Dijkstra_Algorithm\bin\Debug\Dijkstra_Algorithm.exe
+F:\Dij 2010\Dijkstra_Algorithm\Dijkstra_Algorithm\bin\Debug\Dijkstra_Algorithm.pdb
+F:\Dij 2010\Dijkstra_Algorithm\Dijkstra_Algorithm\obj\x86\Debug\ResolveAssemblyReference.cache
+F:\Dij 2010\Dijkstra_Algorithm\Dijkstra_Algorithm\obj\x86\Debug\Dijkstra_Algorithm.exe
+F:\Dij 2010\Dijkstra_Algorithm\Dijkstra_Algorithm\obj\x86\Debug\Dijkstra_Algorithm.pdb
+F:\Кашица. Алгоритм Дейкстры\Проект\Dijkstra_Algorithm\obj\x86\Debug\Dijkstra_Algorithm.exe
+F:\Кашица. Алгоритм Дейкстры\Проект\Dijkstra_Algorithm\obj\x86\Debug\Dijkstra_Algorithm.pdb
+F:\Кашица. Алгоритм Дейкстры\Проект\Dijkstra_Algorithm\bin\Debug\Dijkstra_Algorithm.exe
+F:\Кашица. Алгоритм Дейкстры\Проект\Dijkstra_Algorithm\bin\Debug\Dijkstra_Algorithm.pdb
+F:\Кашица. Алгоритм Дейкстры\Проект\Dijkstra_Algorithm\obj\x86\Debug\ResolveAssemblyReference.cache
+G:\Кашица. Алгоритм Дейкстры\Проект\Dijkstra_Algorithm\bin\Debug\Dijkstra_Algorithm.exe
+G:\Кашица. Алгоритм Дейкстры\Проект\Dijkstra_Algorithm\bin\Debug\Dijkstra_Algorithm.pdb
+G:\Кашица. Алгоритм Дейкстры\Проект\Dijkstra_Algorithm\obj\x86\Debug\Dijkstra_Algorithm.csproj.CoreCompileInputs.cache
+G:\Кашица. Алгоритм Дейкстры\Проект\Dijkstra_Algorithm\obj\x86\Debug\Dijkstra_Algorithm.exe
+G:\Кашица. Алгоритм Дейкстры\Проект\Dijkstra_Algorithm\obj\x86\Debug\Dijkstra_Algorithm.pdb
+G:\Кашица. Алгоритм Дейкстры\Проект\Dijkstra_Algorithm\obj\x86\Debug\Dijkstra_Algorithm.csprojResolveAssemblyReference.cache
+C:\Users\антон\Desktop\Граф. Дейкстра\Dijkstra_Algorithm\bin\Debug\Dijkstra_Algorithm.exe
+C:\Users\антон\Desktop\Граф. Дейкстра\Dijkstra_Algorithm\bin\Debug\Dijkstra_Algorithm.pdb
+C:\Users\антон\Desktop\Граф. Дейкстра\Dijkstra_Algorithm\obj\x86\Debug\Dijkstra_Algorithm.csprojResolveAssemblyReference.cache
+C:\Users\антон\Desktop\Граф. Дейкстра\Dijkstra_Algorithm\obj\x86\Debug\Dijkstra_Algorithm.csproj.CoreCompileInputs.cache
+C:\Users\антон\Desktop\Граф. Дейкстра\Dijkstra_Algorithm\obj\x86\Debug\Dijkstra_Algorithm.exe
+C:\Users\антон\Desktop\Граф. Дейкстра\Dijkstra_Algorithm\obj\x86\Debug\Dijkstra_Algorithm.pdb
