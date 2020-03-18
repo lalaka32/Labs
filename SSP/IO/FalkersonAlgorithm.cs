@@ -6,7 +6,6 @@ namespace IO
     //считаем для всей матрицы, заканчиваем когда все строки использывались
     public class FalkersonAlgorithm : IFalkersonAlgorithm
     {
-        private bool AllRowsAreUsed = true;
         public int?[,] SearchPaths(int?[,] matrixIncedencii, int beginNodeIndex)
         {
             ChangeToZeros(matrixIncedencii);
@@ -17,12 +16,14 @@ namespace IO
             {
                 var rowsForIncrement = GetRowsIndexesOfValue(matrixIncedencii, i);
 
-                IncrementRowsExceptMax(matrixIncedencii, rowsForIncrement);
-                
-                if (AllRowsAreUsed)
+                if (rowsForIncrement.Count == 0)
                 {
                     break;
                 }
+
+                IncrementRowsExceptMax(matrixIncedencii, rowsForIncrement);
+
+                SyncColumns(matrixIncedencii);
             }
 
             return matrixIncedencii;
@@ -46,7 +47,7 @@ namespace IO
                 {
                     if (matrixIncedencii[rowsForIncrement[j], i].HasValue)
                     {
-                        matrixIncedencii[rowsForIncrement[j], i] = maxValue;
+                        matrixIncedencii[rowsForIncrement[j], i] = maxValue + 1;
                     }
                 }
             }
