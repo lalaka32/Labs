@@ -1,0 +1,9 @@
+C:\Users\Марфутин\RiderProjects\SSP\Lab1\obj\Debug\netcoreapp2.2\Lab1.csprojAssemblyReference.cache
+C:\Users\Марфутин\RiderProjects\SSP\Lab1\obj\Debug\netcoreapp2.2\Lab1.csproj.CoreCompileInputs.cache
+C:\Users\Марфутин\RiderProjects\SSP\Lab1\obj\Debug\netcoreapp2.2\Lab1.AssemblyInfoInputs.cache
+C:\Users\Марфутин\RiderProjects\SSP\Lab1\obj\Debug\netcoreapp2.2\Lab1.AssemblyInfo.cs
+C:\Users\Марфутин\RiderProjects\SSP\Lab1\bin\Debug\netcoreapp2.2\Lab1.deps.json
+C:\Users\Марфутин\RiderProjects\SSP\Lab1\bin\Debug\netcoreapp2.2\Lab1.dll
+C:\Users\Марфутин\RiderProjects\SSP\Lab1\bin\Debug\netcoreapp2.2\Lab1.pdb
+C:\Users\Марфутин\RiderProjects\SSP\Lab1\obj\Debug\netcoreapp2.2\Lab1.dll
+C:\Users\Марфутин\RiderProjects\SSP\Lab1\obj\Debug\netcoreapp2.2\Lab1.pdb

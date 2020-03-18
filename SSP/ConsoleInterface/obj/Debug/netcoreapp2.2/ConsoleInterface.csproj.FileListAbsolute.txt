@@ -1,0 +1,14 @@
+D:\GitRip\Labs\SSP\ConsoleInterface\bin\Debug\netcoreapp2.2\ConsoleInterface.deps.json
+D:\GitRip\Labs\SSP\ConsoleInterface\bin\Debug\netcoreapp2.2\ConsoleInterface.runtimeconfig.json
+D:\GitRip\Labs\SSP\ConsoleInterface\bin\Debug\netcoreapp2.2\ConsoleInterface.runtimeconfig.dev.json
+D:\GitRip\Labs\SSP\ConsoleInterface\bin\Debug\netcoreapp2.2\ConsoleInterface.dll
+D:\GitRip\Labs\SSP\ConsoleInterface\bin\Debug\netcoreapp2.2\ConsoleInterface.pdb
+D:\GitRip\Labs\SSP\ConsoleInterface\bin\Debug\netcoreapp2.2\IO.dll
+D:\GitRip\Labs\SSP\ConsoleInterface\bin\Debug\netcoreapp2.2\IO.pdb
+D:\GitRip\Labs\SSP\ConsoleInterface\obj\Debug\netcoreapp2.2\ConsoleInterface.csprojAssemblyReference.cache
+D:\GitRip\Labs\SSP\ConsoleInterface\obj\Debug\netcoreapp2.2\ConsoleInterface.csproj.CoreCompileInputs.cache
+D:\GitRip\Labs\SSP\ConsoleInterface\obj\Debug\netcoreapp2.2\ConsoleInterface.AssemblyInfoInputs.cache
+D:\GitRip\Labs\SSP\ConsoleInterface\obj\Debug\netcoreapp2.2\ConsoleInterface.AssemblyInfo.cs
+D:\GitRip\Labs\SSP\ConsoleInterface\obj\Debug\netcoreapp2.2\ConsoleInterface.csproj.CopyComplete
+D:\GitRip\Labs\SSP\ConsoleInterface\obj\Debug\netcoreapp2.2\ConsoleInterface.dll
+D:\GitRip\Labs\SSP\ConsoleInterface\obj\Debug\netcoreapp2.2\ConsoleInterface.pdb

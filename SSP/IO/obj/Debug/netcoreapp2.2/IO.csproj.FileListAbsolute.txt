@@ -1,0 +1,9 @@
+D:\GitRip\Labs\SSP\IO\bin\Debug\netcoreapp2.2\IO.deps.json
+D:\GitRip\Labs\SSP\IO\bin\Debug\netcoreapp2.2\IO.dll
+D:\GitRip\Labs\SSP\IO\bin\Debug\netcoreapp2.2\IO.pdb
+D:\GitRip\Labs\SSP\IO\obj\Debug\netcoreapp2.2\IO.csprojAssemblyReference.cache
+D:\GitRip\Labs\SSP\IO\obj\Debug\netcoreapp2.2\IO.csproj.CoreCompileInputs.cache
+D:\GitRip\Labs\SSP\IO\obj\Debug\netcoreapp2.2\IO.AssemblyInfoInputs.cache
+D:\GitRip\Labs\SSP\IO\obj\Debug\netcoreapp2.2\IO.AssemblyInfo.cs
+D:\GitRip\Labs\SSP\IO\obj\Debug\netcoreapp2.2\IO.dll
+D:\GitRip\Labs\SSP\IO\obj\Debug\netcoreapp2.2\IO.pdb
