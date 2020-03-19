@@ -16,7 +16,7 @@ namespace ConsoleInterface
                 {0, 0, 0, 0, 1, 0, 1}
             };
             IFalkersonAlgorithm _falkersonAlgorithm = new FalkersonAlgorithm();
-            int?[,] answerMatrix = _falkersonAlgorithm.SearchPaths(matrixIncedencii, 1);
+            int?[,] answerMatrix = _falkersonAlgorithm.SearchPaths(matrixIncedencii, 0);
 
             for (int i = 0; i < answerMatrix.GetLength(0); i++)
             {
