@@ -9,7 +9,7 @@ namespace IO
         public int?[,] SearchPaths(int?[,] matrixIncedencii, int beginNodeIndex)
         {
             ChangeToZeros(matrixIncedencii);
-            
+
             InitializeBeginStep(matrixIncedencii, beginNodeIndex);
 
             for (var i = 1; i < matrixIncedencii.GetLength(1); i++)
@@ -21,7 +21,7 @@ namespace IO
                     break;
                 }
 
-                IncrementRowsExceptMax(matrixIncedencii, rowsForIncrement);
+                IncrementRowsExceptMax(matrixIncedencii, rowsForIncrement, i);
 
                 SyncColumns(matrixIncedencii);
             }
@@ -29,25 +29,16 @@ namespace IO
             return matrixIncedencii;
         }
 
-        private void IncrementRowsExceptMax(int?[,] matrixIncedencii, List<int> rowsForIncrement)
+        private void IncrementRowsExceptMax(int?[,] matrixIncedencii, List<int> rowsForIncrement, int max)
         {
             for (var i = 0; i < matrixIncedencii.GetLength(1); i++)
             {
-                var maxValue = 0;
-                var maxValueIndex = 0;
                 for (var j = 0; j < rowsForIncrement.Count; j++)
                 {
-                    if (matrixIncedencii[rowsForIncrement[j], i].HasValue && matrixIncedencii[rowsForIncrement[j], i].Value > maxValue)
+                    if (matrixIncedencii[rowsForIncrement[j], i].HasValue &&
+                        matrixIncedencii[rowsForIncrement[j], i].Value == 0)
                     {
-                        maxValue = matrixIncedencii[rowsForIncrement[j], i].Value;
-                    }
-                }
-
-                for (var j = 0; j < rowsForIncrement.Count; j++)
-                {
-                    if (matrixIncedencii[rowsForIncrement[j], i].HasValue)
-                    {
-                        matrixIncedencii[rowsForIncrement[j], i] = maxValue + 1;
+                        matrixIncedencii[rowsForIncrement[j], i] = max + 1;
                     }
                 }
             }
@@ -60,9 +51,10 @@ namespace IO
             {
                 for (var j = 0; j < matrixIncedencii.GetLength(1); j++)
                 {
-                    if (matrixIncedencii[i, j].HasValue && matrixIncedencii[i, j].Value == number)
+                    if (matrixIncedencii[i, j].HasValue && matrixIncedencii[i, j].Value == number
+                                                        && !indexes.Contains(i))
                     {
-                        indexes.Add(j);
+                        indexes.Add(i);
                     }
                 }
             }
@@ -86,7 +78,6 @@ namespace IO
                     }
                 }
             }
-
         }
 
         private void InitializeBeginStep(int?[,] matrixIncedencii, int beginNodeIndex)
@@ -98,6 +89,7 @@ namespace IO
                     matrixIncedencii[beginNodeIndex, j]++;
                 }
             }
+
             SyncColumns(matrixIncedencii);
         }
 
@@ -105,12 +97,12 @@ namespace IO
         {
             for (var i = 0; i < matrixIncedencii.GetLength(1); i++)
             {
-                var maxValue = 0;
+                var maxValueOfColumn = 0;
                 for (var j = 0; j < matrixIncedencii.GetLength(0); j++)
                 {
-                    if (matrixIncedencii[j, i].HasValue && matrixIncedencii[j, i].Value > maxValue)
+                    if (matrixIncedencii[j, i].HasValue && matrixIncedencii[j, i].Value > maxValueOfColumn)
                     {
-                        maxValue = matrixIncedencii[j, i].Value;
+                        maxValueOfColumn = matrixIncedencii[j, i].Value;
                     }
                 }
 
@@ -118,7 +110,7 @@ namespace IO
                 {
                     if (matrixIncedencii[j, i].HasValue)
                     {
-                        matrixIncedencii[j, i] = maxValue;
+                        matrixIncedencii[j, i] = maxValueOfColumn;
                     }
                 }
             }
