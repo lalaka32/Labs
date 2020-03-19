@@ -76,9 +76,13 @@ namespace IO
             {
                 for (var j = 0; j < matrixIncedencii.GetLength(1); j++)
                 {
-                    if (matrixIncedencii[i, j].HasValue)
+                    if (matrixIncedencii[i, j] == 1)
                     {
                         matrixIncedencii[i, j] = 0;
+                    }
+                    else
+                    {
+                        matrixIncedencii[i, j] = null;
                     }
                 }
             }
