@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Numerics;
 using IO;
 
 namespace ConsoleInterface
@@ -8,7 +9,8 @@ namespace ConsoleInterface
     {
         static void Main(string[] args)
         {
-            int?[,] matrixIncedencii = {
+            int?[,] matrixIncedencii =
+            {
                 {1, 1, 0, 0, 0, 0, 0},
                 {1, 0, 1, 0, 0, 0, 0},
                 {0, 1, 0, 1, 1, 0, 0},
@@ -16,63 +18,91 @@ namespace ConsoleInterface
                 {0, 0, 1, 0, 0, 1, 1},
                 {0, 0, 0, 0, 1, 0, 1}
             };
-            int beginNodeIndex = 0;
 
-            IFalkersonAlgorithm _falkersonAlgorithm = new FalkersonAlgorithm();
-            int?[,] answerMatrix = _falkersonAlgorithm.SearchPaths(matrixIncedencii, beginNodeIndex);
+            //var A = SetNotNull((int?[,]) matrixIncedencii.Clone());
 
-            for (int i = 0; i < answerMatrix.GetLength(0); i++)
-            {
-                for (int j = 0; j < answerMatrix.GetLength(1); j++)
-                    Console.Write(String.Format("{0,3}", answerMatrix[i, j]));
-                Console.WriteLine();
-            }
-            List<int> Path = new List<int>();
+            IFalkersonAlgorithm algorithm = new FalkersonAlgorithm();
+            var answerMatrix = algorithm.SearchPathsForStartNode(matrixIncedencii, 0);
 
-            FindPath(answerMatrix, beginNodeIndex, 5);
-            foreach (var item in Path)
+            PrintMatrix(answerMatrix);
+
+            var path = algorithm.FindPathToNode(5);
+            PrintList(path);
+            IMatrixOperations _ops = new MatrixOperations();
+            var A = ReadMatrix();
+            var D = _ops.Subtraction(_ops.Multiply(_ops.Transpose(A), A),
+                _ops.MultiplyNumber(_ops.IdentityMatrix(A.GetLength(0) + 1), 2));
+            Console.WriteLine();
+            PrintMatrix(D);
+
+            Console.ReadLine();
+        }
+
+        private static void PrintList(List<int> path)
+        {
+            foreach (var item in path)
             {
                 Console.Write(item + " ");
             }
+        }
 
-
-            List<int> FindPath(int?[,] matrix, int startNodeIndex, int endNodeIndex)
+        static void PrintMatrix(int?[,] matrix)
+        {
+            for (var i = 0; i < matrix.GetLength(0); i++)
             {
+                for (var j = 0; j < matrix.GetLength(1); j++)
+                    Console.Write(String.Format("{0,3}", matrix[i, j]));
+                Console.WriteLine();
+            }
+        }
+        static void PrintMatrix(int[,] matrix)
+        {
+            for (var i = 0; i < matrix.GetLength(0); i++)
+            {
+                for (var j = 0; j < matrix.GetLength(1); j++)
+                    Console.Write(String.Format("{0,3}", matrix[i, j]));
+                Console.WriteLine();
+            }
+        }
 
-                int i = endNodeIndex;
+        static int[,] ReadMatrix()
+        {
+            Console.WriteLine("Enter sizes");
+            var sizes = Console.ReadLine();
+            var sizesSplited = sizes.Split(" ");
+            var width = Convert.ToInt32(sizesSplited[0]);
+            var height = Convert.ToInt32(sizesSplited[1]);
+            int[,] mat = new int[width, height];
+            Console.WriteLine("Enter values");
 
-                do
+            for (var i = 0; i < mat.GetLength(0); i++)
+            {
+                var values = Console.ReadLine();
+                var splited = values.Split(" ");
+                for (var j = 0; j < mat.GetLength(1); j++)
                 {
-                    Path.Add(i+1);
-                    int minInRow = int.MaxValue;
-                    int indexMinInRow = 0;
-                    for (int j = 0; j < matrix.GetLength(1); j++)
-                    {
-
-                        if (matrix[i, j] < minInRow)
-                        {
-                            minInRow = matrix[i, j].GetValueOrDefault();
-                            indexMinInRow = j;
-                        }
-                    }
-
-                    for (int k = 0; k < matrix.GetLength(0); k++)
-                    {
-                        if (matrix[k, indexMinInRow].HasValue && k != i)
-                        {
-                            i = k;
-                            break;
-                        }
-                    }
+                    mat[i, j] = Convert.ToInt32(splited[j]);
                 }
-                while (i != startNodeIndex);
-                Path.Add(1);
-                Path.Reverse();
 
-                return Path;
+                Console.WriteLine();
             }
 
-            Console.ReadLine();
+            return mat;
+        }
+        
+        static int[,] SetNotNull(int?[,] matrix)
+        {
+            int[,] mat = new int[matrix.GetLength(0), matrix.GetLength(1)];
+
+            for (var i = 0; i < matrix.GetLength(0); i++)
+            {
+                for (var j = 0; j < matrix.GetLength(1); j++)
+                {
+                    mat[i, j] = matrix[i, j].GetValueOrDefault();
+                }
+            }
+
+            return mat;
         }
     }
 }

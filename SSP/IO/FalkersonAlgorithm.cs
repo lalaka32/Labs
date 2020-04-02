@@ -3,11 +3,15 @@ using System.Collections.Generic;
 
 namespace IO
 {
-    //считаем для всей матрицы, заканчиваем когда все строки использывались
     public class FalkersonAlgorithm : IFalkersonAlgorithm
     {
-        public int?[,] SearchPaths(int?[,] matrixIncedencii, int beginNodeIndex)
+        private int _beginNodeIndex;
+        private int?[,] _matrix;
+
+        public int?[,] SearchPathsForStartNode(int?[,] matrixIncedencii, int beginNodeIndex)
         {
+            _matrix = matrixIncedencii;
+            _beginNodeIndex = beginNodeIndex;
             ChangeToZeros(matrixIncedencii);
 
             InitializeBeginStep(matrixIncedencii, beginNodeIndex);
@@ -21,7 +25,7 @@ namespace IO
                     break;
                 }
 
-                IncrementRowsExceptMax(matrixIncedencii, rowsForIncrement, i);
+                SetMaxWhenZeros(matrixIncedencii, rowsForIncrement, i);
 
                 SyncColumns(matrixIncedencii);
             }
@@ -29,7 +33,43 @@ namespace IO
             return matrixIncedencii;
         }
 
-        private void IncrementRowsExceptMax(int?[,] matrixIncedencii, List<int> rowsForIncrement, int max)
+        public List<int> FindPathToNode(int endNodeIndex)
+        {
+            var path = new List<int>();
+
+            var currentNodeIndex = endNodeIndex;
+
+            do
+            {
+                path.Add(currentNodeIndex);
+                var minInRow = int.MaxValue;
+                var indexMinInRow = 0;
+                for (var j = 0; j < _matrix.GetLength(1); j++)
+                {
+                    if (_matrix[currentNodeIndex, j] < minInRow)
+                    {
+                        minInRow = _matrix[currentNodeIndex, j].GetValueOrDefault();
+                        indexMinInRow = j;
+                    }
+                }
+
+                for (var k = 0; k < _matrix.GetLength(0); k++)
+                {
+                    if (_matrix[k, indexMinInRow].HasValue && k != currentNodeIndex)
+                    {
+                        currentNodeIndex = k;
+                        break;
+                    }
+                }
+            } while (currentNodeIndex != _beginNodeIndex);
+
+            path.Add(_beginNodeIndex);
+            path.Reverse();
+
+            return path;
+        }
+
+        private void SetMaxWhenZeros(int?[,] matrixIncedencii, List<int> rowsForIncrement, int max)
         {
             for (var i = 0; i < matrixIncedencii.GetLength(1); i++)
             {
